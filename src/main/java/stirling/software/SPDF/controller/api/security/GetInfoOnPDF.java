@@ -61,9 +61,9 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-import stirling.software.SPDF.model.api.PDFFile;
-import stirling.software.SPDF.service.CustomPDFDocumentFactory;
-import stirling.software.SPDF.utils.WebResponseUtils;
+import stirling.software.common.model.api.PDFFile;
+import stirling.software.common.service.CustomPDFDocumentFactory;
+import stirling.software.common.util.WebResponseUtils;
 
 @RestController
 @RequestMapping("/api/v1/security")
@@ -622,8 +622,8 @@ public class GetInfoOnPDF {
         permissionsNode.put("Document Assembly", getPermissionState(ap.canAssembleDocument()));
         permissionsNode.put("Extracting Content", getPermissionState(ap.canExtractContent()));
         permissionsNode.put(
-            "Extracting for accessibility",
-            getPermissionState(ap.canExtractForAccessibility()));
+                "Extracting for accessibility",
+                getPermissionState(ap.canExtractForAccessibility()));
         permissionsNode.put("Form Filling", getPermissionState(ap.canFillInForm()));
         permissionsNode.put("Modifying", getPermissionState(ap.canModify()));
         permissionsNode.put("Modifying annotations", getPermissionState(ap.canModifyAnnotations()));
